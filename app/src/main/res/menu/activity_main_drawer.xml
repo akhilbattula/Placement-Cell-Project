@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/college"
+            android:title="About College" />
+        <item
+            android:id="@+id/nav_registration"
+            android:icon="@drawable/applynow"
+            android:title="Regstration" />
+        <item
+            android:id="@+id/nav_campus"
+            android:icon="@drawable/upcoming"
+
+            android:title="Campus Drives" />
+
+    </group>
+    <item android:title="Gallery">
+        <menu>
+            <item
+                android:id="@+id/nav_previous"
+                android:icon="@drawable/previous"
+                android:title="2015- 16 Placements" />
+            <item
+                android:id="@+id/nav_gallery"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="Gallery" />
+        </menu>
+    </item>
+
+    <item android:title="Preparation">
+        <menu>
+
+            <item
+                android:id="@+id/nav_aptitude"
+                android:icon="@drawable/apti"
+                android:title="Aptitude" />
+
+
+        </menu>
+    </item>
+
+    <item android:title="Follow Us On">
+        <menu>
+
+            <item
+                android:id="@+id/nav_fb"
+                android:icon="@drawable/follow"
+                android:title="Facebook" />
+            <item
+                android:id="@+id/nav_gmail"
+                android:icon="@drawable/follow1"
+                android:title="Gmail" />
+
+        </menu>
+    </item>
+
+
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/ic_menu_share"
+            android:title="Share Our App" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/logout"
+            android:title="Log Out" />
+        <item
+            android:id="@+id/nav_exit"
+            android:icon="@drawable/exit"
+            android:title="Exit" />
+
+    </group>
+
+</menu>

@@ -1,0 +1,173 @@
+package com.akhil.placementcell;
+
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.akhil.placementcell.classes.News;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
+
+public class RecentDrives extends AppCompatActivity {
+
+
+    private RecyclerView mnewslist;
+    DatabaseReference mdatabase;
+    LinearLayoutManager mLayoutManager;
+    Boolean isInternetPresent = false;
+    ConnectionDetector cd;
+   public ProgressDialog mpro;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_recent_drives);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        mdatabase = FirebaseDatabase.getInstance().getReference().child("News");
+
+        mpro = new ProgressDialog(this);
+
+        mnewslist = (RecyclerView) findViewById(R.id.news_list);
+
+        mLayoutManager = new LinearLayoutManager(RecentDrives.this);
+        mLayoutManager.setReverseLayout(true);
+        mLayoutManager.setStackFromEnd(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        mpro.setMessage("Loading...");
+
+        mnewslist.setHasFixedSize(true);
+        mnewslist.setLayoutManager(mLayoutManager);
+
+        new Wait().execute();
+    }
+
+    private class Wait extends AsyncTask<Void, Void, Boolean> {
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            mpro.setMessage("Loading...");
+            mpro.setCancelable(true);
+          mpro.show();
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... params) {
+            try {
+                Thread.sleep(6000);
+            }
+            catch (InterruptedException ie) {
+                Log.d("",ie.toString());
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Boolean bool) {
+            mpro.dismiss();
+        }
+    }
+
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        cd = new ConnectionDetector(getApplicationContext());
+        isInternetPresent = cd.isConnectingToInternet();
+        if (!isInternetPresent) {
+            // Internet Connection is not present
+            Toast.makeText(RecentDrives.this, "Please Check Your Internet Connection.", Toast.LENGTH_LONG).show();
+            //  Intent intent = new Intent(Settings.ACTION_SETTINGS);
+            //  startActivity(intent);
+        }
+
+        FirebaseRecyclerAdapter<News, NewsViewHolder> adapter = new FirebaseRecyclerAdapter<News, NewsViewHolder>(
+                News.class,
+                R.layout.news_row,
+                NewsViewHolder.class,
+                mdatabase
+
+        ) {
+            @Override
+            protected void populateViewHolder(NewsViewHolder viewHolder, final News model, int position) {
+
+                final String post_key = getRef(position).getKey();
+
+                viewHolder.setTitle(model.getTitle());
+                viewHolder.setImage(getApplicationContext(), model.getImage());
+
+
+                viewHolder.mview.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                       // Toast.makeText(getApplicationContext(), post_key, Toast.LENGTH_SHORT).show();
+
+                        Intent single_intent = new Intent(RecentDrives.this, News_Single.class);
+                        single_intent.putExtra("post_id", post_key);
+                        startActivity(single_intent);
+                    }
+                });
+
+            }
+        };
+
+        mnewslist.setAdapter(adapter);
+    }
+
+    public static class NewsViewHolder extends RecyclerView.ViewHolder {
+
+        View mview;
+
+        public NewsViewHolder(View itemView) {
+            super(itemView);
+
+            mview = itemView;
+        }
+
+        public void setTitle(String title) {
+
+            TextView post_t = (TextView) mview.findViewById(R.id.post_title);
+            post_t.setText(title);
+        }
+        /*public void setDate(String date){
+
+            TextView post_t = (TextView) mview.findViewById(R.id.post_date);
+            post_t.setText(date);
+        }*/
+
+        public void setImage(Context cxt, String image) {
+
+            ImageView post_i = (ImageView) mview.findViewById(R.id.post_image);
+            Picasso.get().load(image).into(post_i);
+            //Picasso.with(cxt).load(image).into(post_i);
+
+        }
+
+    }
+
+
+
+
+}
+
+

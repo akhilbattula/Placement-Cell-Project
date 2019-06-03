@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.akhil.placementcell">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+
+    <application
+        android:name="com.akhil.placementcell.MyFirebaseApp"
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.akhil.placementcell.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.akhil.placementcell.AuthActivity"
+            android:label="@string/title_activity_profile"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.akhil.placementcell.SignupActivity"
+            android:label="@string/title_activity_login"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.akhil.placementcell.ResetPasswordActivity"
+            android:label="@string/title_activity_reset_password"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="com.akhil.placementcell.FullScreenViewActivity" />
+        <activity
+            android:name="com.akhil.placementcell.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+
+        <activity
+            android:name="com.akhil.placementcell.AboutCollege"
+            android:label="@string/title_activity_about_college"
+            android:parentActivityName="com.akhil.placementcell.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.akhil.placementcell.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.akhil.placementcell.AboutTPO"
+            android:label="@string/title_activity_about_tpo"
+            android:parentActivityName="com.akhil.placementcell.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.akhil.placementcell.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.akhil.placementcell.UpcomingDrives"
+            android:label="@string/title_activity_upcoming_drives"
+            android:parentActivityName="com.akhil.placementcell.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.akhil.placementcell.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.akhil.placementcell.ContactUs"
+            android:label="@string/title_activity_contact_us"
+            android:parentActivityName="com.akhil.placementcell.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.akhil.placementcell.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.akhil.placementcell.RecentDrives"
+            android:label="@string/title_activity_recent_drives"
+            android:parentActivityName="com.akhil.placementcell.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.akhil.placementcell.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.akhil.placementcell.RecentActivities"
+            android:label="@string/title_activity_recent_activities"
+            android:parentActivityName="com.akhil.placementcell.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.akhil.placementcell.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.akhil.placementcell.Message"
+            android:label="@string/title_activity_message"
+            android:parentActivityName="com.akhil.placementcell.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.akhil.placementcell.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.akhil.placementcell.LastYearPlacements"
+            android:label="@string/title_activity_last_year_placements"
+            android:parentActivityName="com.akhil.placementcell.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.akhil.placementcell.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.akhil.placementcell.Gallery"
+            android:label="@string/title_activity_gallery"
+            android:parentActivityName="com.akhil.placementcell.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.akhil.placementcell.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.akhil.placementcell.AboutTPC"
+            android:label="@string/title_activity_about_tpc"
+            android:parentActivityName="com.akhil.placementcell.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.akhil.placementcell.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.akhil.placementcell.Registration"
+            android:label="Interview Etiqutte"
+            android:parentActivityName="com.akhil.placementcell.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.akhil.placementcell.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.akhil.placementcell.Feedback"
+            android:label="@string/title_activity_feedback"
+            android:parentActivityName="com.akhil.placementcell.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.akhil.placementcell.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.akhil.placementcell.UpcomingDetailActivity"
+            android:label="@string/title_activity_upcoming_detail"
+            android:parentActivityName="com.akhil.placementcell.UpcomingDrives"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.akhil.placementcell.UpcomingDrives" />
+        </activity>
+        <activity
+            android:name="com.akhil.placementcell.News_Single"
+            android:label="Recent Drives"
+            android:parentActivityName="com.akhil.placementcell.RecentDrives"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.akhil.placementcell.RecentDrives" />
+        </activity>
+        <activity
+            android:name="com.akhil.placementcell.Activity_Single"
+            android:label="Activities"
+            android:parentActivityName="com.akhil.placementcell.RecentActivities"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.akhil.placementcell.RecentActivities" />
+        </activity>
+        <service
+                android:name="com.akhil.placementcell.MyFirebaseMessagingService">
+                <intent-filter>
+                    <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                </intent-filter>
+            </service>
+
+            <service
+                android:name="com.akhil.placementcell.MyFirebaseInstanceIDService">
+                <intent-filter>
+                    <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+                </intent-filter>
+            </service>
+        <activity
+            android:name="com.akhil.placementcell.Aptitude"
+            android:label="@string/title_activity_aptitude"
+            android:parentActivityName="com.akhil.placementcell.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.akhil.placementcell.MainActivity" />
+        </activity>
+
+    </application>
+
+</manifest>

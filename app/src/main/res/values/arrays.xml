@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="menu">
+        <item>About Us</item>
+        <item>Admissions</item>
+        <item>Courses</item>
+        <item>Faculty</item>
+        <item>Placements</item>
+        <item>International</item>
+        <item>Gallery</item>
+        <item>"Events &amp; 
+ News"</item>
+        <item>"Infra
+structure"</item>
+        <item>Social</item>
+        <item>Contact Us</item>
+        <item>Map</item>
+    </string-array>
+
+    <string-array name="side_menu">
+        <item>About Us</item>
+        <item>Admissions</item>
+        <item>Courses</item>
+        <item>Faculty</item>
+        <item>Placements</item>
+        <item>International</item>
+        <item>Gallery</item>
+        <item>Events &amp; News</item>
+        <item>Infrastructure</item>
+        <item>Social</item>
+        <item>Contact Us</item>
+        <item>Map</item>
+    </string-array>
+</resources>

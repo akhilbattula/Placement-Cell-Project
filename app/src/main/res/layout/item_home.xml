@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:id="@+id/llbg"
+   android:layout_margin="10dp"
+    android:padding="5dp"
+    android:layout_width="120dp"
+    android:layout_height="110dp">
+
+
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/aboutcollege" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="3dp"
+        >
+        <TextView
+            android:textColor="#fff"
+            android:id="@+id/tv_menu"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="adfafdadasfdasfgasfasfdasfdsafdasdfsdgsdfgsdsfasdfasdfasdf"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_below="@id/iv_icon" />
+        </LinearLayout>
+    </LinearLayout>
