@@ -3,6 +3,8 @@ Notice boards is primary thing in any institution/organization and they rely on 
 
 The prime objective of PLACEMENT CELL APP is to create a fully, fledged android application which would discover the Placement drives &amp;  job opportunities happening in and around the institution/organization so that no one will miss out the opportunities. PLACEMENT CELL APP has a largest collection of Placement drives &amp; job opportunities in and around institution reaching out to the active user.
 
+Backend: Firebase Auth and Firebase Database
+
 Points to Note:
 1. Both Admin & User modules are present in this project
 2. Admin module have Full permission set to placements and other info except Users data(Read-only permission)
